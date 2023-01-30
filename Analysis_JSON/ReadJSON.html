@@ -1,0 +1,48 @@
+<html>
+
+<head></head>
+
+<script>
+    // 定義一個 JSON 物件
+    var Jas = {
+        "resourceType": "Patient",
+        "name": [{
+            "use": "official",
+            "text": "林帶玉",
+            "family": "林",
+            "given": ["帶玉"]
+        }],
+        "gender": "female",
+        "birthDate": "1773-01-21",
+    };
+    
+    var ret = JSON.stringify(Jas); // 物件轉字串
+    //alert(ret); // 網頁彈出顯示 ret 結果
+
+    document.write("JSON物件內容：<br>")
+    document.write(ret)
+
+    // 解析內容
+    document.write("<br><br><br>解析結果:<br>")
+    var name = Jas.name[0].text;
+    document.write("<br>Name: ", name)
+    var name1 = Jas.name[0].family;
+    document.write("<br>Last Name: ", name1)
+    var name2 = Jas.name[0].given[0];
+    document.write("<br>First Name: ", name2)
+    var gd = Jas.gender;
+    document.write("<br>Gender: ", gd)
+    var bd = Jas.birthDate;
+    document.write("<br>Birthday: ", bd)
+
+    // 修改物件值
+    document.write("<br><br><br>--修改物件值--<br><br>")
+    Jas.birthDate = "2000-01-01"; 
+    var ret2 = JSON.stringify(Jas)
+    document.write("修改後JSON物件內容：<br>")
+    document.write(ret2)
+</script>
+
+<body></body>
+
+</html>
