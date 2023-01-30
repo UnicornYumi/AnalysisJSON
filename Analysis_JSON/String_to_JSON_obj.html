@@ -1,0 +1,23 @@
+<html>
+
+<head></head>
+
+<body>
+
+    <h3>I want to get your Name:</h3>
+    <h3 id="demo"></h3>
+    <!--<p id="demo1"></p>-->
+
+    <script>
+        // 定義一個 JSON 物件
+        let text = '{"resourceType":"Patient","name":[{"use":"official","text":"林帶玉","family":"林","given":["帶玉"]}],"gender":"female","birthDate":"1773-01-21"}';
+        const obj = JSON.parse(text);// 字串轉物件
+        document.getElementById("demo").innerHTML = obj.name[0].family + " " + obj.name[0].given[0]; // 顯示於網頁中
+
+        // let text1 = '{"employees":[' + '{"firstName":"John","lastName":"Doe" },' + '{"firstName":"Anna","lastName":"Smith" },' + '{"firstName":"Peter","lastName":"Jones" }]}';
+
+    </script>
+
+</body>
+
+</html>
